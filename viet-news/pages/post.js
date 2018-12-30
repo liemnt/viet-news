@@ -1,4 +1,4 @@
-import Layout from "../components/Layout/index.js";
+import Layout from "../views/App/components/Layout/index.js";
 import fetch from "isomorphic-unfetch";
 import Post from "../views/Post";
 import Head from "next/head";

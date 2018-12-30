@@ -1,34 +1,30 @@
-import React, {PureComponent} from "react";
-import Layout from "../components/Layout/index";
+import React, { PureComponent } from "react";
+import Layout from "../views/App/components/Layout/index";
 import Home from "../views/Home";
-import {getAllTimelines} from "../services/api/timeline";
+import { getAllTimelines } from "../services/api/timeline";
 
 class Index extends PureComponent {
-    static defaultProps = {
+  static defaultProps = {};
 
-    };
+  static propTypes = {};
 
-    static propTypes = {};
-
-    render() {
-        return (
-            <Layout>
-                <Home timelines={this.props.timelines} />
-            </Layout>
-        );
-    }
+  render() {
+    return (
+      <Home timelines={this.props.timelines}/>
+    );
+  }
 }
 
 Index.getInitialProps = async function(context) {
-    const res = await getAllTimelines();
-    if (res.errors===null){
-        return {
-            timelines: res.data
-        }
-    }
+  const res = await getAllTimelines();
+  if (res.errors === null) {
     return {
-        timelines:[]
-    }
+      timelines: res.data
+    };
+  }
+  return {
+    timelines: []
+  };
 };
 
 export default Index;

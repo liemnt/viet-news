@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import ProductComp from '../components/product'
+import ProductComp from '../views/App/components/product'
 import Head from 'next/head'
 
 class Product extends React.Component {

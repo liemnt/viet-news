@@ -1,0 +1,291 @@
+/**********************************/
+/* 
+	COLOR-1.CSS
+	#f38844 (Orange Default);
+ */
+/**********************************/
+
+.header {
+  border-bottom: 3px solid #f38844;
+}
+
+.header_down {
+  border-bottom: 3px solid #f38844;
+}
+
+.btn-search .icon-search-1 {
+  color: #f38844;
+}
+
+.clock #time {
+  background: #f38844;
+}
+
+.search-container {
+  background-color: #f38844;
+}
+
+.search-container input {
+  background-color: #f38844;
+}
+
+.breaking-ribbon{
+  background: #f38844;
+}
+
+.wsmenu-list > li > a:after {
+  background: #f38844;
+}
+
+.news__category {
+  color: #f38844;
+}
+
+.special__category {
+  color: #f38844;
+}
+
+.header_news_panel .nav-tabs > li.active > a,
+.header_news_panel .nav-tabs > li.active > a:focus,
+.header_news_panel .nav-tabs > li.active > a:hover {
+  color: #f38844;
+}
+
+.header_news_panel .nav > li > a:focus,
+.header_news_panel .nav > li > a:hover {
+  color: #f38844;
+}
+
+.tab-pane__category {
+  color: #f38844;
+}
+
+.navbar-default {
+  border-bottom: solid 3px #f38844;
+}
+
+.headline__category_orange {
+  background-color: #f38844;
+}
+
+.tags ul li a {
+  background-color: #f38844;
+}
+
+.right_sidebar .nav-tabs > li.active > a,
+.right_sidebar .nav-tabs > li.active > a:focus,
+.right_sidebar .nav-tabs > li.active > a:hover,
+.right_sidebar .nav-tabs > li > a:hover {
+  color: #f38844;
+}
+
+.block-title__h2::after {
+  background: #f38844;
+}
+
+.block-title__view-all::before, .projects__title__view-all::before {
+  color: #f38844;
+}
+
+.popular__content .popular__content__box .popular__content__category {
+  color: #f38844;
+}
+
+.bradius4 {
+  background-color: #f38844;
+}
+
+.bradius6 {
+  border: 3px solid #f38844;
+}
+
+.bradius10 {
+  border: 4px solid #f38844;
+}
+
+.bradius11 {
+  border: 3px solid #f38844;
+}
+
+.bradius12 {
+  background-color: #f38844;
+}
+
+.popular__content .popular__content__box .popular__content__category {
+    color: #f38844;
+}
+
+.btn-comment {
+  background: #f38844;
+}
+
+.block__sensation__hash a{
+  background-color: #f38844;
+}
+
+.block__sensation__description{
+  background-color: #f38844;
+}
+
+.news__tab__category .ncats-tabs li.active a {
+  border-color: #f38844;
+  color: #f38844;
+}
+
+.news__tab__categorys .news__tab__category__box .news__tab__category_name {
+  color: #f38844;
+}
+
+.message__link {
+  color: #f38844;
+}
+
+.message__link:hover {
+  color: #f38844;
+}
+
+.redaction__category {
+  color: #f38844;
+}
+
+.block-title__view-all::before, .projects__title__view-all::before {
+  color: #f38844;
+}
+
+.error__left .error__text {
+  color: #f38844;
+}
+
+.error__right .error__head {
+  color: #f38844;
+}
+
+.error__center .error__text__h1 {
+  color: #f38844;
+}
+
+.error__center .error__head {
+  color: #f38844;
+}
+
+.error__center .error__list li .link {
+  color: #f38844;
+}
+
+.error__center .error__list li .link::after {
+  background-color: #f38844;
+}
+
+.footer__category {
+  color: #f38844;
+}
+
+.wsmenu-submenu{
+  border-bottom: solid 3px #f38844;
+}
+
+.wsmenu-mega-submenu{
+  border-bottom: solid 3px #f38844;
+}
+
+.wsmenu-mega-submenu .carousel-indicators .active {
+  background-color: #f38844;
+}
+
+.wsmenu-mega-submenu .carousel-indicators li {
+  border: 1px solid #f38844;
+}
+
+.wsmenu-mega-submenu .carousel-control:focus, .wsmenu-mega-submenu .carousel-control:hover {
+  color: #f38844;
+}
+
+.wsmenu-mega__category {
+  color: #f38844;
+}
+
+.wsmenu-mega__meadia-list span {
+  background: #f38844;
+}
+
+.yel_line::after, .yellow-line::after, .underscore::after {
+  background: #f38844;
+}
+
+.header_news_panel .nav-tabs li.active a:before {
+  background-color: #f38844;
+}
+
+.switcher__color span a {
+  background: #f38844;
+}
+
+.a-main__text a {
+  color: #f38844;
+}
+
+.a-article__link {
+  color: #f38844;
+}
+
+.a-article__text a {
+  color: #f38844;
+}
+
+.a-carousel .slick-dots li.slick-active {
+  background-color: #f38844;
+}
+
+.c-input-wrap input[type="text"]:hover {
+  box-shadow: inset 0 0 5px 0 #f38844;
+  border-color: #f38844;
+}
+
+.c-input-wrap input[type="text"]:focus {
+  box-shadow: inset 0 0 5px 0 #f38844;
+  border-color: #f38844;
+}
+
+.c-message-wrap textarea:hover {
+  box-shadow: inset 0 0 5px 0 #f38844;
+  border-color: #f38844;
+}
+
+.c-message-wrap textarea:focus {
+  box-shadow: inset 0 0 5px 0 #f38844;
+  border-color: #f38844;
+}
+
+.c-send-wrap #form-submit {
+  background-color: #f38844;
+}
+
+.btn-style-lp_red {
+  background-color: #f38844;
+}
+
+.bg-1 {
+  background-color: #f38844;
+}
+
+.banner__link {
+  border-color: #d28224;
+  background-image: -webkit-linear-gradient(90deg, #cd8127 0%, #f7a645 76%, #f7a645 79%, #f7a645 83%, #f7a645 100%);
+  background-image: -ms-linear-gradient(90deg, #cd8127 0%, #f7a645 76%, #f7a645 79%, #f7a645 83%, #f7a645 100%);
+}
+
+.right_sidebar ul li.active a:before {
+  background-color: #f38844;
+}
+
+.status-block {
+  border-left: 2px solid #f38844;
+}
+
+/**********************************/
+/* 
+	END
+	COLOR-1.CSS
+	#f38844 (Orange Default);
+ */
+/**********************************/

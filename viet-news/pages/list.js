@@ -1,5 +1,5 @@
 import Listpage from "../views/List";
-import Layout from "../components/Layout";
+import Layout from "../views/App/components/Layout";
 import Head from 'next/head'
 
 import React, { PureComponent } from "react";
