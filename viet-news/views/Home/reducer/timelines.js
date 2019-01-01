@@ -1,5 +1,5 @@
-import { GET_ALL_TIMELINE, GET_ALL_TMELINE_SUCCESS } from "../const";
 import Immutable, { fromJS } from "immutable";
+import { GET_ALL_TIMELINE, GET_ALL_TMELINE_SUCCESS } from "../const/timelines";
 import { combineReducers } from "redux";
 
 const isLoading = (state = false, action) => {

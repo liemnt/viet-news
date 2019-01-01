@@ -1,15 +1,13 @@
-import { delay } from 'redux-saga'
-import { all, call, put, take, takeLatest } from 'redux-saga/effects'
-import es6promise from 'es6-promise'
-import 'isomorphic-unfetch'
-import homeSaga from './views/Home/saga'
+import { delay } from "redux-saga";
+import { all, call, put, take, takeLatest } from "redux-saga/effects";
+import es6promise from "es6-promise";
+import "isomorphic-unfetch";
+import homeSaga from "./views/Home/sagas/index";
 
-es6promise.polyfill()
+es6promise.polyfill();
 
-function * rootSaga () {
-    yield all([
-        homeSaga(),
-    ])
+function* rootSaga() {
+  yield all([homeSaga()]);
 }
 
-export default rootSaga
+export default rootSaga;

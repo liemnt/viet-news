@@ -1,8 +1,10 @@
-import { combineReducers } from "redux";
+import { combineReducers } from "redux-immutable";
 import timelines from "./timelines";
+import articlesListByTimeline from "./articles";
 
 const home = combineReducers({
-  timelines
+  timelines,
+  articlesListByTimeline
 });
 
 export default home;
