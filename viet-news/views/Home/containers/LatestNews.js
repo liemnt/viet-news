@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getLatestArticles } from "../actions/latestArticles";
 import { latestArticles } from "../reducer/latestArticles.selector";
-import LatestNews from "../components/LatestNews";
+import NewsList from "../../App/components/LeftNewsList";
 
 class LatestNewsContainer extends PureComponent {
   static defaultProps = {};
@@ -16,7 +16,7 @@ class LatestNewsContainer extends PureComponent {
 
   render() {
     const { latestArticles, ...props } = this.props;
-    return <LatestNews {...props} latestArticles={latestArticles.toJS()} />;
+    return <NewsList {...props} latestArticles={latestArticles.toJS()} />;
   }
 }
 

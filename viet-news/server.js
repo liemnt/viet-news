@@ -17,8 +17,9 @@ app
       "/api",
       proxy(CONFIG.HOST, {
         proxyReqPathResolver: function(req) {
+          console.log('test url', CONFIG.EXTENDED_PATH + require("url").parse(req.url).path);
           return (
-            CONFIG.EXTENDED_PATH + require("url").parse(req.url).path + "/"
+            CONFIG.EXTENDED_PATH + require("url").parse(req.url).path
           );
         }
       })
@@ -27,6 +28,12 @@ app
     server.get("/news/:slug", (req, res) => {
       const actualPage = "/post";
       const queryParams = { slug: req.params.slug };
+      app.render(req, res, actualPage, queryParams);
+    });
+
+    server.get("/category/:categoryId", (req, res) => {
+      const actualPage = "/category";
+      const queryParams = { categoryId: req.params.categoryId };
       app.render(req, res, actualPage, queryParams);
     });
 

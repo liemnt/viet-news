@@ -1266,7 +1266,7 @@ ul.color_schemes li {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 
@@ -1302,6 +1302,12 @@ a.news__caption:hover {
   font-family: "Roboto", sans-serif;
   text-decoration: none;
   cursor: pointer;
+  min-height: 45px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .news__desc:hover {
@@ -1324,14 +1330,14 @@ p.news__desc:hover {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   color: #4e4e4e;
-  line-height: 1.333;
+  line-height: 1.5;
   min-height: 45px;
   margin-bottom: 10px;
 
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -5315,4 +5321,7 @@ input.newsletter-input:-ms-input-placeholder {
   right: 0;
   width: 100%;
   height: 100%;
+}
+.load-more{
+  padding-bottom: 20px;
 }

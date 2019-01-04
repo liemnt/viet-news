@@ -4,6 +4,9 @@ import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
 import withReduxSaga from "next-redux-saga";
 import Header from "../views/App/components/Header";
+import FooterLine from "../views/App/components/Footer/FooterLine";
+import Footer from "../views/App/components/Footer/Footer";
+import Index from "../views/App/components/GoTop";
 
 import createStore from "../store";
 import { getAllCategories } from "../services/api/category";
@@ -26,12 +29,14 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, categories, store } = this.props;
-    // window.categories = categories;
     return (
       <Container>
         <Provider store={store}>
           <Header categories={categories} />
           <Component categories={categories} {...pageProps} />
+          <Footer />
+          <FooterLine />
+          <Index />
         </Provider>
       </Container>
     );

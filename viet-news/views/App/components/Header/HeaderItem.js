@@ -16,12 +16,12 @@ class HeaderItem extends PureComponent {
   };
 
   render() {
-    const { name, slug, id } = this.props.data;
+    const { name, id } = this.props.data;
     const { isActive } = this.props;
     return (
       <li className={classNames({ active: isActive })}>
         <span className="wsmenu-click" />
-        <Link as={`/categories/${slug}`} href={`/category?id=${id}`}>
+        <Link as={`/category/${id}`} href={`/category?categoryId=${id}`}>
           {name}
         </Link>
       </li>

@@ -13,7 +13,7 @@ function* getCategoryArticlesToServer({ category }) {
       yield put(
         getCategoryArticlesSuccess({
           ...category,
-          data: res.data
+          data: res.data.results
         })
       );
     }

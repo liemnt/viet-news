@@ -3,31 +3,6 @@ import PropTypes from "prop-types";
 import Slider from "react-slick";
 import CategoryArticle from "./CategoryArticle";
 
-const configSlider = {
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1199,
-      settings: {
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ]
-};
-
 class CategoryArticles extends PureComponent {
   static defaultProps = {};
 
@@ -37,6 +12,30 @@ class CategoryArticles extends PureComponent {
 
   render() {
     const { data, name } = this.props.categoryArticles;
+    const configSlider = {
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
+    };
     return (
       <section className="wrap wrap_gray">
         <div className="container container__no-padding">

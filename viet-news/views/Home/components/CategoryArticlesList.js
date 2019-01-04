@@ -13,9 +13,16 @@ class CategoryArticlesList extends PureComponent {
     const { categoryArticlesList } = this.props;
     return (
       <div>
-        {categoryArticlesList.map(categoryArticles => {
-          return <CategoryArticles key={categoryArticles.id} categoryArticles={categoryArticles} />;
-        })}
+        {categoryArticlesList
+          .filter(c => c.data.length >= 4)
+          .map(categoryArticles => {
+            return (
+              <CategoryArticles
+                key={categoryArticles.id}
+                categoryArticles={categoryArticles}
+              />
+            );
+          })}
       </div>
     );
   }

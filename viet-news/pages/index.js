@@ -1,7 +1,5 @@
 import React, { PureComponent } from "react";
 import Home from "../views/Home";
-import _ from "lodash";
-import { withTimelines } from "../views/Home/hocs/withTimelines";
 
 class Index extends PureComponent {
   static defaultProps = {};

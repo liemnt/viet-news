@@ -5,5 +5,6 @@ export const API_PATH = {
   ARTICLE_BY_SLUG: "articles/slug/",
   ARTICLE_BY_ID: "articles/",
   ALL_CATEGORY: "categories/get_all",
-  ARTICLE_SEARCH: "articles/search/"
+  ARTICLE_SEARCH: "articles/search/",
+  CATEGORY_BY_ID: 'categories/'
 };

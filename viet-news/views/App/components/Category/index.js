@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-class Category extends PureComponent {
+class Index extends PureComponent {
   static defaultProps = {};
 
   static propTypes = {
@@ -14,4 +14,4 @@ class Category extends PureComponent {
   }
 }
 
-export default Category;
+export default Index;

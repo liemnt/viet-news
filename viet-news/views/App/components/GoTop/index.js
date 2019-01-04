@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 
-class GoTop extends PureComponent {
+class Index extends PureComponent {
   static defaultProps = {};
 
   static propTypes = {};
@@ -15,4 +15,4 @@ class GoTop extends PureComponent {
   }
 }
 
-export default GoTop;
+export default Index;
