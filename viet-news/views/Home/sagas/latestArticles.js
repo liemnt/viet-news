@@ -7,7 +7,6 @@ function* getLatestArticleToServer() {
   try {
     const res = yield call(getLatestArticles, 1);
     if (res.errors === null) {
-      console.log('test articles', res)
       yield put(getLatestArticleSuccess(res.data.results));
     }
   } catch (e) {

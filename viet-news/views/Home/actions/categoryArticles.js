@@ -4,10 +4,10 @@ import {
   GET_CATEGORY_ARTICLES
 } from "../const/categoryArticles";
 
-const getCategoryArticles = categoryId => {
+const getCategoryArticles = category => {
   return {
     type: GET_CATEGORY_ARTICLES,
-    categoryId
+    category
   };
 };
 
