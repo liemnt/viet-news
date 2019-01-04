@@ -8,6 +8,7 @@ import _ from "lodash";
 import Title from "../../../views/App/components/Title";
 import { withRouter } from "next/router";
 import FlipMove from "react-flip-move";
+import { Spin } from "antd";
 import {
   isLoading,
   numPerPage,
@@ -33,7 +34,7 @@ class ListNewsContainer extends PureComponent {
   }
 
   render() {
-    const { articles, category, page, numPerPage } = this.props;
+    const { articles, category, page, numPerPage, isLoading } = this.props;
     const limitArticle = articles.toJS().slice(0, (page - 1) * numPerPage);
     return (
       <div className="wrap wrap_gray">

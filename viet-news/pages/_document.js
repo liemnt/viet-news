@@ -64,6 +64,7 @@ export default class MyDocument extends Document {
             id="skins"
           />
           <link rel="stylesheet" href="../static/css/animate.css" />
+          <link rel="stylesheet" href="../static/css/antd.css" />
           {/*<link rel="stylesheet" href="../static/css/slick-theme.css" />*/}
           <link
             href="../static/css/react-slick.css"

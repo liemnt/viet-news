@@ -15,7 +15,7 @@ class Category extends PureComponent {
   render() {
     return (
       <div>
-        <Loading/>
+        {/*<Loading/>*/}
         <ListNews
           categories={this.props.categories}
           category={this.props.category}
