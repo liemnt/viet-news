@@ -31,12 +31,14 @@ class Index extends PureComponent {
                   );
                 })}
               </div>
-              <div className="col-xs-6">
-                <LargeLatestArticle
-                  article={latestArticles[4]}
-                  categories={categories}
-                />
-              </div>
+              {latestArticles[4] && (
+                <div className="col-xs-6">
+                  <LargeLatestArticle
+                    article={latestArticles[4]}
+                    categories={categories}
+                  />
+                </div>
+              )}
             </div>
             <div className="row">
               {latestArticles.slice(5).map((article, index) => {

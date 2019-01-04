@@ -32,7 +32,7 @@ class MyApp extends App {
     return (
       <Container>
         <Provider store={store}>
-          <Header categories={categories} />
+          <Header {...pageProps} categories={categories} />
           <Component categories={categories} {...pageProps} />
           <Footer />
           <FooterLine />

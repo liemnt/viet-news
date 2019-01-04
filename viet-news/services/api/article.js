@@ -53,3 +53,18 @@ export const getCategoryArticles = async (categoryId, page) => {
   const resJson = await res.json();
   return resJson;
 };
+
+export const getTagArticles = async (tagId, page) => {
+  const params = {
+    isPaginator: "True",
+    orderBy: "-published_at",
+    page,
+    tagId
+  };
+  const paramsString = queryString.stringify(params);
+  const res = await fetch(
+    `${BASE_URL}${API_PATH.ARTICLE_SEARCH}?${paramsString}`
+  );
+  const resJson = await res.json();
+  return resJson;
+};

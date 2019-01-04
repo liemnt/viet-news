@@ -1,8 +1,8 @@
 import React from "react";
-import Post from "./Post";
+import Post from "./components/Post";
 
-const Postpage = ({article}) => {
-  return <Post article={article} />;
+const Postpage = ({ article, categories }) => {
+  return <Post article={article} categories={categories} />;
 };
 
 export default Postpage;

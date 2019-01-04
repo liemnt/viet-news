@@ -1,20 +1,18 @@
-import Layout from "../views/App/components/Layout/index.js";
-import fetch from "isomorphic-unfetch";
 import Post from "../views/Post";
 import Head from "next/head";
-import { getArticleById, getArticleBySlug } from "../services/api/article";
+import { getArticleBySlug } from "../services/api/article";
 
-const Postpage = ({ article }) => (
-  <Layout>
+const NewsPage = ({ article, categories }) => (
+  <div>
     <Head>
       <meta name="description" content={article.backstory} />
       <title>{article.title}</title>
     </Head>
-    <Post article={article} />
-  </Layout>
+    <Post categories={categories} article={article} />
+  </div>
 );
 
-Postpage.getInitialProps = async function(context) {
+NewsPage.getInitialProps = async function(context) {
   const { slug } = context.query;
   const res = await getArticleBySlug(slug);
   if (res.errors === null) {
@@ -25,4 +23,4 @@ Postpage.getInitialProps = async function(context) {
   return { article: {} };
 };
 
-export default Postpage;
+export default NewsPage;
