@@ -26,11 +26,12 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, categories, store } = this.props;
+    // window.categories = categories;
     return (
       <Container>
         <Provider store={store}>
           <Header categories={categories} />
-          <Component {...pageProps} />
+          <Component categories={categories} {...pageProps} />
         </Provider>
       </Container>
     );

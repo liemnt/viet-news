@@ -1,17 +1,6 @@
-import { createSelector } from "reselect";
+const rootPath = ["home", "timelines"];
 
-const root = state => state.getIn(["home", "timelines"]);
-
-const isLoading = () =>
-  createSelector(
-    root,
-    state => state.get("isLoading")
-  );
-
-const timelines = () =>
-  createSelector(
-    root,
-    state => state.get("timeline")
-  );
+const isLoading = state => state.getIn(rootPath.concat(["isLoading"]));
+const timelines = state => state.getIn(rootPath.concat(["timelines"]));
 
 export { isLoading, timelines };

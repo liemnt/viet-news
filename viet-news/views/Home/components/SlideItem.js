@@ -20,12 +20,10 @@ class SlideItem extends PureComponent {
   render() {
     const { title, backstory, thumbnail, crawled_at } = this.props.data;
     return (
-      <div role="tabpanel" className="tab-pane fade in active" id="home">
-        <img
-          src={thumbnail || "http://placehold.it/760x450"}
-          alt="main img"
-          className="tab-pane__img"
-        />
+      <div role="tabpanel" className="tab-pane fade in active">
+        <div className="tab-pane__img">
+          <img src={thumbnail || "http://placehold.it/760x450"} alt="" />
+        </div>
         <div className="header_news_text tab-pane__block">
           <p className="tab-pane__category yel_line">
             <TimeAgo formatter={formatter} date={crawled_at} />

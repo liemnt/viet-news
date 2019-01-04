@@ -5,6 +5,7 @@ import { getAllTimeline } from "../actions/timelines";
 import { connect } from "react-redux";
 import Slider from "../components/Slider";
 import { getArticlesByTimelineId } from "../actions/articles";
+import { timelines } from "../reducer/timeline.selector";
 
 class SliderContainer extends PureComponent {
   static defaultProps = {};
@@ -26,7 +27,6 @@ class SliderContainer extends PureComponent {
 
   getFirstSlide = () => {
     this.props.getArticlesByTimelineId(this.props.timelines.toJS()[0].id);
-    console.log("get first slide", this.props.timelines);
   };
 
   render() {
@@ -45,7 +45,7 @@ class SliderContainer extends PureComponent {
 }
 const mapStateToProps = state => {
   return {
-    timelines: state.getIn(["home", "timelines", "timelines"])
+    timelines: timelines(state)
   };
 };
 

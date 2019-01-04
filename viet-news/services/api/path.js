@@ -4,5 +4,6 @@ export const API_PATH = {
   TIMELINE_BY_ID: "timelines/",
   ARTICLE_BY_SLUG: "articles/slug/",
   ARTICLE_BY_ID: "articles/",
-  ALL_CATEGORY: "categories/get_all"
+  ALL_CATEGORY: "categories/get_all",
+  ARTICLE_SEARCH: "articles/search/"
 };

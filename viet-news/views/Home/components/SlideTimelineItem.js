@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 import TimeAgo from "react-timeago";
 import viStrings from "react-timeago/lib/language-strings/vi";
@@ -14,14 +15,22 @@ class SlideTimelineItem extends PureComponent {
     data: PropTypes.shape({
       title: PropTypes.string,
       published_at: PropTypes.string
-    })
+    }).isRequired,
+    isActive: PropTypes.bool.isRequired
   };
 
   render() {
-    const { title, published_at } = this.props.data;
+    const {
+      data: { title, published_at },
+      isActive,
+      ...props
+    } = this.props;
     return (
-      <li role="presentation" className="active">
-        <a role="tab" data-toggle="tab">
+      <li
+        {...props}
+        className={classNames({ active: isActive })}
+      >
+        <a>
           <span className="time">
             <i className="icon-clock-1" />{" "}
             <TimeAgo formatter={formatter} date={published_at} />

@@ -63,7 +63,14 @@ export default class MyDocument extends Document {
             type="text/css"
             id="skins"
           />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"/>
+          <link rel="stylesheet" href="../static/css/animate.css" />
+          {/*<link rel="stylesheet" href="../static/css/slick-theme.css" />*/}
+          <link
+            href="../static/css/react-slick.css"
+            rel="stylesheet"
+            type="text/css"
+            id="skins"
+          />
         </Head>
         <body>
           <Main />

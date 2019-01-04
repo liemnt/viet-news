@@ -4,11 +4,8 @@ import PropTypes from "prop-types";
 import _ from "lodash";
 import Slide from "../components/Slide";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
 
 import { articlesByTimeline } from "../reducer/articles.selector";
-
-// console.log('test props', PropTypes.list);
 
 class SlideContainer extends PureComponent {
   static defaultProps = {};
@@ -22,7 +19,6 @@ class SlideContainer extends PureComponent {
     if (!_.has(this.props, "timeline")) {
       return "Chua co";
     }
-    console.log("test timeline", this.props.timeline);
     const {
       timeline,
       articlesByTimeline,
@@ -34,16 +30,12 @@ class SlideContainer extends PureComponent {
     if (articles) {
       return <Slide articles={articles.toJS().data} timeline={timeline} />;
     }
-    return "ahihi";
+    return null;
   }
 }
 
 const mapStateToProps = state => ({
-  articlesByTimeline: state.getIn([
-    "home",
-    "articlesListByTimeline",
-    "articlesByTimeline"
-  ])
+  articlesByTimeline: articlesByTimeline(state)
 });
 
 export default connect(mapStateToProps)(SlideContainer);

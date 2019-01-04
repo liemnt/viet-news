@@ -9,7 +9,7 @@ class Index extends PureComponent {
   static propTypes = {};
 
   render() {
-    return <Home />;
+    return <Home {...this.props} />;
   }
 }
 

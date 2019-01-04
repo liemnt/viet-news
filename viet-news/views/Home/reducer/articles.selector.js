@@ -1,17 +1,8 @@
-import { createSelector } from "reselect";
+const rootPath = ["home", "articlesListByTimeline"];
 
-const root = state => state.getIn(["home", "articlesListByTimeline"]);
+const isLoading = state => state.getIn(rootPath.concat(["isLoading"]));
 
-const isLoading = () =>
-  createSelector(
-    root,
-    state => state.get("isLoading")
-  );
-
-const articlesByTimeline = () =>
-  createSelector(
-    root,
-    state => state.get("articlesByTimeline")
-  );
+const articlesByTimeline = state =>
+  state.getIn(rootPath.concat(["articlesByTimeline"]));
 
 export { isLoading, articlesByTimeline };
