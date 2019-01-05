@@ -82,30 +82,21 @@ class Post extends PureComponent {
                 </div>
                 <div className="share">
                   <ul className="share__list">
-                    <li className="share__row">
+                    <div
+                      className="fb-share-button"
+                        data-href={"http://a.com/" + this.state.path}
+                      data-layout="button_count"
+                      data-size="small"
+                      data-mobile-iframe="true"
+                    >
                       <a
-                        className="share__link share__link_bg-facebook"
-                        href="#"
+                        target="_blank"
+                        href={"http://a.com/" + this.state.path}
+                        className="fb-xfbml-parse-ignore"
                       >
-                        <i className="bg bg_facebook">&ensp;</i>
+                        Chia sẻ
                       </a>
-                      <span className="share__number">13</span>
-                    </li>
-                    <li className="share__row">
-                      <a
-                        className="share__link share__link_bg-twitter"
-                        href="#"
-                      >
-                        <i className="bg bg_twitter">&ensp;</i>
-                      </a>
-                      <span className="share__number">26</span>
-                    </li>
-                    <li className="share__row">
-                      <a className="share__link share__link_bg-google" href="#">
-                        <i className="bg bg_google">&ensp;</i>
-                      </a>
-                      <span className="share__number">17</span>
-                    </li>
+                    </div>
                   </ul>
                 </div>
               </div>

@@ -26,7 +26,6 @@ class Tag extends PureComponent {
 Tag.getInitialProps = async function(context) {
   const tagId = context.query.tagId;
   const res = await getTagById(tagId);
-  console.log("test tag", res);
   if (res.errors === null) {
     return {
       tag: res.data

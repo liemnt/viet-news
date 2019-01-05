@@ -7,6 +7,12 @@ const NewsPage = ({ article, categories }) => (
     <Head>
       <meta name="description" content={article.backstory} />
       <title>{article.title}</title>
+
+      {/*<meta property="og:url"           content="https://www.your-domain.com/your-page.html" />*/}
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={article.title} />
+      <meta property="og:description" content={article.backstory} />
+      <meta property="og:image" content={article.thumbnail} />
     </Head>
     <Post categories={categories} article={article} />
   </div>
