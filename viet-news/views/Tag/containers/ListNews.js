@@ -14,6 +14,7 @@ import {
   selectArticlesByTag,
   total
 } from "../reducers/articles.selector";
+import LoadMore from "./LoadMore";
 
 class ListNewsContainer extends PureComponent {
   static defaultProps = {};
@@ -33,12 +34,13 @@ class ListNewsContainer extends PureComponent {
     const limitArticle = articles.toJS().slice(0, (page - 1) * numPerPage);
     return (
       <div className="wrap wrap_gray">
-        <Title title={'#'+tag.name} />
+        <Title title={"#" + tag.name} />
         <FlipMove>
           {_.chunk(limitArticle, numPerPage).map((articlesList, index) => {
             if (index % 2 === 0) {
               return (
                 <LeftNewsList
+                  key={index}
                   extraClassName={index === 0 ? "pt20" : ""}
                   categories={this.props.categories}
                   latestArticles={articlesList}
@@ -47,12 +49,14 @@ class ListNewsContainer extends PureComponent {
             }
             return (
               <RightNewsList
+                key={index}
                 categories={this.props.categories}
                 latestArticles={articlesList}
               />
             );
           })}
         </FlipMove>
+        <LoadMore tag={tag} className="wrap-gray" />
       </div>
     );
   }

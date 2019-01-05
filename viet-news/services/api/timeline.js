@@ -9,7 +9,7 @@ export const getAllTimelines = async () => {
 };
 
 export const getTimelineById = async (timelineId) => {
-    const res = await fetch(`${BASE_URL}${API_PATH.TIMELINE_BY_ID}${timelineId}`);
+    const res = await fetch(`${BASE_URL}${API_PATH.TIMELINE_BY_ID}${timelineId}/`);
     const resJson = await res.json();
     return resJson;
 }

@@ -23,3 +23,14 @@ export const getTagById = async tagId => {
   const resJson = await res.json();
   return resJson;
 };
+
+export const getLatestTag = async () => {
+  const params = {
+    isPaginator: "True",
+    orderBy: "-created_at"
+  };
+  const stringParams = queryString.stringify(params);
+  const res = await fetch(`${BASE_URL}${API_PATH.TAG_SEARCH}?${stringParams}`);
+  const resJson = await res.json();
+  return resJson;
+};

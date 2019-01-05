@@ -2,26 +2,28 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import LoadMore from "../../App/components/LoadMore";
 import { connect } from "react-redux";
-import { getArticlesByCategory } from "../actions/articles";
-import { page } from "../reducers/articles.selector";
+import { getArticlesByTimelineId } from "../actions/timelines";
+import { page } from "../reducers/timelines.selector";
 
 class LoadMoreContainer extends PureComponent {
   static defaultProps = {};
 
   static propTypes = {
-    category: PropTypes.object.isRequired
+    categoryId: PropTypes.number.isRequired,
+    timelineId: PropTypes.number
   };
 
   loadArticles = () => {
-    const { category, getArticlesByCategory, page } = this.props;
-    getArticlesByCategory(category.id, page);
+    const {
+      categoryId,
+      timelineId,
+      getArticlesByTimelineId,
+      page
+    } = this.props;
+    getArticlesByTimelineId(timelineId, categoryId, page);
   };
   render() {
-    return (
-      <div className="wrap_gray">
-        <LoadMore onClick={this.loadArticles} />
-      </div>
-    );
+    return <LoadMore onClick={this.loadArticles} />;
   }
 }
 
@@ -30,7 +32,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  getArticlesByCategory
+  getArticlesByTimelineId
 };
 
 export default connect(

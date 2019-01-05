@@ -26,6 +26,13 @@ class Category extends PureComponent {
 
 Category.getInitialProps = async function(context) {
   const categoryId = context.query.categoryId;
+  if (categoryId === "latest") {
+    return {
+      category: {
+        name: "Tin mới"
+      }
+    };
+  }
   const res = await getCategoryById(categoryId);
   if (res.errors === null) {
     return {

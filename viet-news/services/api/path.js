@@ -8,5 +8,6 @@ export const API_PATH = {
   ARTICLE_SEARCH: "articles/search/",
   CATEGORY_BY_ID: 'categories/',
   TAG_LIST: 'tags/get_tags_detail/',
-  TAG_BY_ID: 'tags/'
+  TAG_BY_ID: 'tags/',
+  TAG_SEARCH: 'tags/search/'
 };

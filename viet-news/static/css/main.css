@@ -392,6 +392,7 @@ html .ma {
 }
 
 .wrap-logo {
+  display: block;
   padding-top: 18px;
   color: white;
   font-weight: bold;
@@ -5328,7 +5329,7 @@ input.newsletter-input:-ms-input-placeholder {
   height: 100%;
 }
 .load-more {
-  padding-bottom: 20px;
+  /*padding-bottom: 20px;*/
 }
 
 .video {
@@ -5353,3 +5354,30 @@ a,
 a:focus {
   color: white;
 }
+
+.current__text a{
+  color: #4e4e4e;
+}
+
+
+/*
+ *  STYLE 8
+ */
+
+#style-8::-webkit-scrollbar-track
+{
+  border: #303e4b;
+  background-color: #303e4b;
+}
+
+#style-8::-webkit-scrollbar
+{
+  width: 5px;
+  background-color: #303e4b;
+}
+
+#style-8::-webkit-scrollbar-thumb
+{
+  background-color: white;
+}
+

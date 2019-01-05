@@ -22,7 +22,8 @@ class HeaderItem extends PureComponent {
       <li className={classNames({ active: isActive })}>
         <span className="wsmenu-click" />
         <Link as={`/category/${id}`} href={`/category?categoryId=${id}`}>
-          {name}
+          <a href="javascript:0">          {name}
+          </a>
         </Link>
       </li>
     );

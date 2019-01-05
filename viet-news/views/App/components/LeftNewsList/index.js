@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import SmallArticleCard from "../ArticleCard/SmallArticleCard";
 import LargeLatestArticle from "../ArticleCard/LargeArticleCard";
 
-class Index extends PureComponent {
+class LatestNews extends PureComponent {
   static defaultProps = {};
 
   static propTypes = {
@@ -22,7 +22,7 @@ class Index extends PureComponent {
               {latestArticles.slice(0, 9).map((article, index) => {
                 if (index === 0) {
                   return (
-                    <div className="col-sm-6">
+                    <div key={article.id} className="col-sm-6">
                       <LargeLatestArticle
                         categories={categories}
                         article={article}
@@ -31,7 +31,7 @@ class Index extends PureComponent {
                   );
                 }
                 return (
-                  <div className="col-sm-3">
+                  <div key={article.id} className="col-sm-3">
                     <SmallArticleCard
                       categories={categories}
                       article={article}
@@ -47,4 +47,4 @@ class Index extends PureComponent {
   }
 }
 
-export default Index;
+export default LatestNews;

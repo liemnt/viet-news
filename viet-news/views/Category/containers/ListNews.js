@@ -16,6 +16,7 @@ import {
   selectArticlesByCategory,
   total
 } from "../reducers/articles.selector";
+import LoadMore from "./LoadMore";
 
 class ListNewsContainer extends PureComponent {
   static defaultProps = {};
@@ -34,7 +35,14 @@ class ListNewsContainer extends PureComponent {
   }
 
   render() {
-    const { articles, category, page, numPerPage, isLoading } = this.props;
+    const {
+      articles,
+      category,
+      page,
+      numPerPage,
+      total,
+      isLoading
+    } = this.props;
     const limitArticle = articles.toJS().slice(0, (page - 1) * numPerPage);
     return (
       <div className="wrap wrap_gray">
@@ -44,6 +52,7 @@ class ListNewsContainer extends PureComponent {
             if (index % 2 === 0) {
               return (
                 <LeftNewsList
+                  key={index}
                   extraClassName={index === 0 ? "pt20" : ""}
                   categories={this.props.categories}
                   latestArticles={articlesList}
@@ -52,12 +61,16 @@ class ListNewsContainer extends PureComponent {
             }
             return (
               <RightNewsList
+                key={index}
                 categories={this.props.categories}
                 latestArticles={articlesList}
               />
             );
           })}
         </FlipMove>
+        {(page - 1) * numPerPage <= total && (
+          <LoadMore category={category} className="wrap-gray" />
+        )}
       </div>
     );
   }

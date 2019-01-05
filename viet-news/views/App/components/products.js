@@ -3,7 +3,7 @@ import Link from 'next/link'
 const ProductLink = (props) => (
     <div className="product">
         <Link as={`/product/${props.id}`} href={`/product?id=${props.id}`}>
-            <a>
+            <a href='javascript:0'>
                 <img src={props.image} alt={props.name} height='250' className="thumbnail"/>
                 <p>{ props.description }</p>
                 <p>{props.name}</p>

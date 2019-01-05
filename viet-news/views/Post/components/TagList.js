@@ -15,7 +15,7 @@ class TagList extends PureComponent {
         <p>Tags:</p>
         <ul>
           {tagList.map(tag => {
-            return <Tag tag={tag} />;
+            return <Tag key={tag.id} tag={tag} />;
           })}
         </ul>
       </div>

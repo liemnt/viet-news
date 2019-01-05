@@ -24,9 +24,7 @@ class CategoryArticle extends PureComponent {
           </div>
           <div className="popular__content__box">
             {/*<h5 className="popular__content__category yel_line">Bussiness</h5>*/}
-            <a href="news.html" className="popular__content__link">
-              {title}
-            </a>
+            <span className="popular__content__link">{title}</span>
             <div className="popular__content__posted">
               <span className="popular__content__posted__date">
                 <i className="icon-clock-1" />

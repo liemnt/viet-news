@@ -24,16 +24,30 @@ export const getArticleById = async id => {
   return resJson;
 };
 
-export const getLatestArticles = async page => {
+export const getTimelineArticles = async (timelineId, page) => {
   const params = {
     isPaginator: "True",
     orderBy: "-published_at",
     page,
-    timelineId: null
+    timelineId: timelineId
   };
   const paramsString = queryString.stringify(params);
   const res = await fetch(
-    `${BASE_URL}${API_PATH.ARTICLE_SEARCH}?${paramsString}/`
+    `${BASE_URL}${API_PATH.ARTICLE_SEARCH}?${paramsString}`
+  );
+  const resJson = await res.json();
+  return resJson;
+};
+
+export const getLatestArticles = async page => {
+  const params = {
+    isPaginator: "True",
+    orderBy: "-published_at",
+    page
+  };
+  const paramsString = queryString.stringify(params);
+  const res = await fetch(
+    `${BASE_URL}${API_PATH.ARTICLE_SEARCH}?${paramsString}`
   );
   const resJson = await res.json();
   return resJson;
@@ -43,9 +57,11 @@ export const getCategoryArticles = async (categoryId, page) => {
   const params = {
     isPaginator: "True",
     orderBy: "-published_at",
-    page,
-    categoryId
+    page
   };
+  if (categoryId && categoryId !== "latest") {
+    _.set(params, "categoryId", categoryId);
+  }
   const paramsString = queryString.stringify(params);
   const res = await fetch(
     `${BASE_URL}${API_PATH.ARTICLE_SEARCH}?${paramsString}`

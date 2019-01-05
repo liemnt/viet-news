@@ -10,6 +10,8 @@ import Index from "../views/App/components/GoTop";
 
 import createStore from "../store";
 import { getAllCategories } from "../services/api/category";
+import { getLatestTag } from "../services/api/tag";
+import { getLatestArticles } from "../services/api/article";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -23,18 +25,36 @@ class MyApp extends App {
     if (response.errors === null) {
       categories = response.data;
     }
+    let tags = [];
+    const tagRes = await getLatestTag();
+    if (tagRes.errors === null) {
+      tags = tagRes.data.results;
+    }
 
-    return { pageProps, categories };
+    let articles = [];
+    const articlesRes = await getLatestArticles();
+    if (articlesRes.errors === null) {
+      articles = articlesRes.data.results;
+    }
+
+    return { pageProps, categories, tags, articles };
   }
 
   render() {
-    const { Component, pageProps, categories, store } = this.props;
+    const {
+      Component,
+      articles,
+      pageProps,
+      tags,
+      categories,
+      store
+    } = this.props;
     return (
       <Container>
         <Provider store={store}>
           <Header {...pageProps} categories={categories} />
           <Component categories={categories} {...pageProps} />
-          <Footer />
+          <Footer articles={articles} tags={tags} />
           <FooterLine />
           <Index />
         </Provider>

@@ -11,7 +11,7 @@ class SlideContainer extends PureComponent {
   static defaultProps = {};
 
   static propTypes = {
-    articles: ImmutablePropTypes.list.isRequired,
+    articlesByTimeline: ImmutablePropTypes.list.isRequired,
     timeline: PropTypes.object.isRequired
   };
 

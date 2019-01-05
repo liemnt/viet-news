@@ -14,7 +14,7 @@ class Tag extends PureComponent {
     return (
       <Link href={`/tag?tagId=${id}`} as={`/tag/${id}`}>
         <li>
-          <a href="#" title="World" className="font">
+          <a href="javascript:0" title="World" className="font">
             {name}
           </a>
         </li>

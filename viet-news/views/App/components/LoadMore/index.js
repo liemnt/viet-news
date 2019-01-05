@@ -8,7 +8,7 @@ class LoadMore extends PureComponent {
 
   render() {
     return (
-      <div className="wrap_gray load-more">
+      <div className="load-more">
         <div
           {...this.props}
           className={"ajax_load " + this.props.className || ""}

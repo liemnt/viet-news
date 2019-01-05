@@ -15,7 +15,6 @@ class SliderContainer extends PureComponent {
   }
 
   static propTypes = {
-    isLoading: PropTypes.bool.isRequired,
     timelines: Immutable.list.isRequired
   };
 

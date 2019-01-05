@@ -69,9 +69,9 @@ class Header extends PureComponent {
             <div className="row">
               <div className="col-sm-3">
                 <Link href="/">
-                  <div className="wrap-logo">
+                  <a href='javascript:0' className="wrap-logo">
                     VIET NEWS
-                  </div>
+                  </a>
                 </Link>
               </div>
               <div className="col-lg-7 col-lg-offset-2 col-sm-offset-1 col-md-offset-1 col-sm-8 col-md-8 hidden-sm hidden-xs">
@@ -177,6 +177,7 @@ class Header extends PureComponent {
                   {filteredCategories.map(data => {
                     return (
                       <HeaderItem
+                        key={data.id}
                         isActive={
                           _.get(category, "id") === data.id ||
                           _.get(article, "category_id") === data.id

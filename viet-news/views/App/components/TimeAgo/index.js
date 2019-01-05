@@ -12,7 +12,8 @@ class TimeAgoContainer extends PureComponent {
   static propTypes = {};
 
   render() {
-    return <TimeAgo format={formatter} {...this.props} />;
+    const {date, ...props} =this.props;
+    return <TimeAgo formatter={formatter} date={date} {...props} />;
   }
 }
 

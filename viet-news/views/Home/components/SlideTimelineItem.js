@@ -2,11 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import TimeAgo from "react-timeago";
-import viStrings from "react-timeago/lib/language-strings/vi";
-import buildFormatter from "react-timeago/lib/formatters/buildFormatter";
-
-const formatter = buildFormatter(viStrings);
+import TimeAgo from "../../App/components/TimeAgo";
 
 class SlideTimelineItem extends PureComponent {
   static defaultProps = {};
@@ -26,14 +22,10 @@ class SlideTimelineItem extends PureComponent {
       ...props
     } = this.props;
     return (
-      <li
-        {...props}
-        className={classNames({ active: isActive })}
-      >
+      <li {...props} className={classNames({ active: isActive })}>
         <a>
           <span className="time">
-            <i className="icon-clock-1" />{" "}
-            <TimeAgo formatter={formatter} date={published_at} />
+            <i className="icon-clock-1" /> <TimeAgo date={published_at} />
           </span>
           {title}
         </a>

@@ -13,9 +13,9 @@ class FooterLine extends PureComponent {
           <div className="row">
             <div className="col-sm-6">
               <p className="copyright">
-                © 2018 NicStyle | Development by{" "}
+                © 2018 VietNews | Development by{" "}
                 <a href="http://exsythemes.com" target="_blank">
-                  EXSYthemes
+                  Goodnight Team
                 </a>
               </p>
             </div>
