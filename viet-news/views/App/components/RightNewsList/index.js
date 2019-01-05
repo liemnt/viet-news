@@ -22,7 +22,7 @@ class Index extends PureComponent {
               <div className="col-sm-6 p0">
                 {latestArticles.slice(0, 4).map((article, index) => {
                   return (
-                    <div className="col-xs-6">
+                    <div className="col-sm-6">
                       <SmallArticleCard
                         categories={categories}
                         article={article}
@@ -32,7 +32,7 @@ class Index extends PureComponent {
                 })}
               </div>
               {latestArticles[4] && (
-                <div className="col-xs-6">
+                <div className="col-sm-6">
                   <LargeLatestArticle
                     article={latestArticles[4]}
                     categories={categories}
@@ -43,7 +43,7 @@ class Index extends PureComponent {
             <div className="row">
               {latestArticles.slice(5).map((article, index) => {
                 return (
-                  <div className="col-xs-3">
+                  <div className="col-sm-3">
                     <SmallArticleCard
                       categories={categories}
                       article={article}

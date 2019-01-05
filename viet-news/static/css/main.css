@@ -1645,11 +1645,15 @@ a.special__link:focus {
 }
 
 .news-tabs__title.h2 {
+  margin-top: 15px;
+}
+
+.news-tabs__title.h2.orange {
+  margin-top: 20px;
   cursor: pointer;
   background: #f38844;
   padding: 10px 20px;
   display: inline-block;
-  margin-top: 0px;
 }
 
 .header_news_panel .nav-tabs li {
@@ -5356,29 +5360,28 @@ a:focus {
   color: white;
 }
 
-.current__text a{
+.current__text a {
   color: #4e4e4e;
 }
-
 
 /*
  *  STYLE 8
  */
 
-#style-8::-webkit-scrollbar-track
-{
+#style-8::-webkit-scrollbar-track {
   border: #303e4b;
   background-color: #303e4b;
 }
 
-#style-8::-webkit-scrollbar
-{
+#style-8::-webkit-scrollbar {
   width: 5px;
   background-color: #303e4b;
 }
 
-#style-8::-webkit-scrollbar-thumb
-{
+#style-8::-webkit-scrollbar-thumb {
   background-color: white;
 }
 
+.body-ads {
+  display: none;
+}

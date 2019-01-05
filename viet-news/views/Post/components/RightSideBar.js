@@ -36,7 +36,7 @@ class RightSideBar extends PureComponent {
           className="col-sm-4 col-md-3 right_sidebar hidden-xs hidden-sm"
         >
           <div className="news-tabs">
-            <TitleRightBar currentArticle={currentArticle} />
+            <TitleRightBar className="orange" currentArticle={currentArticle} />
             <ul
               className="news-tabs__nav nav nav-tabs shadow_text"
               role="tablist"

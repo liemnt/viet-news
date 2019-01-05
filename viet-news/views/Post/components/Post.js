@@ -119,6 +119,7 @@ class Post extends PureComponent {
                 className="fb-comments"
                 data-href={"http://localhost:3000/" + this.state.path}
                 data-numposts="5"
+                data-width="100%"
               />
             </div>
           </div>

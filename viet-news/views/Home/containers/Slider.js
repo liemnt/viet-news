@@ -15,7 +15,8 @@ class SliderContainer extends PureComponent {
   }
 
   static propTypes = {
-    timelines: Immutable.list.isRequired
+    timelines: Immutable.list.isRequired,
+    categories: PropTypes.array.isRequired
   };
 
   getArticles = (oldIndex, newIndex) => {
@@ -29,10 +30,11 @@ class SliderContainer extends PureComponent {
   };
 
   render() {
-    const { timelines } = this.props;
+    const { timelines, categories } = this.props;
     if (timelines.size > 0) {
       return (
         <Slider
+          categories={categories}
           onInit={this.getFirstSlide}
           beforeChange={this.getArticles}
           timelines={timelines.toJS()}

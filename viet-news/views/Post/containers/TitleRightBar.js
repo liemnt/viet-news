@@ -12,14 +12,17 @@ class TitleRightBar extends PureComponent {
   };
 
   render() {
-    const { timeline, currentArticle } = this.props;
+    const { timeline, currentArticle, className } = this.props;
     const { category_id, timeline_id } = currentArticle;
     return (
       <Link
         href={`/category?categoryId=${category_id}`}
         as={`/category/${category_id}`}
       >
-        <a href="javascript:0" className="news-tabs__title h2">
+        <a
+          href="javascript:0"
+          className={"news-tabs__title h2 " + className || ""}
+        >
           {timeline.get("id") && (
             <span style={{ fontSize: "1.5rem" }}>Sự kiện:</span>
           )}

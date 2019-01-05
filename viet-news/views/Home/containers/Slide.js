@@ -12,7 +12,8 @@ class SlideContainer extends PureComponent {
 
   static propTypes = {
     articlesByTimeline: ImmutablePropTypes.list.isRequired,
-    timeline: PropTypes.object.isRequired
+    timeline: PropTypes.object.isRequired,
+    categories: PropTypes.array.isRequired,
   };
 
   render() {
@@ -22,13 +23,14 @@ class SlideContainer extends PureComponent {
     const {
       timeline,
       articlesByTimeline,
-      timeline: { id }
+      timeline: { id },
+      categories
     } = this.props;
     const articles = articlesByTimeline.find(article => {
       return article.get("timelineId") === id;
     });
     if (articles) {
-      return <Slide articles={articles.toJS().data} timeline={timeline} />;
+      return <Slide categories={categories} articles={articles.toJS().data} timeline={timeline} />;
     }
     return null;
   }

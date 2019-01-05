@@ -15,7 +15,8 @@ class ArticleSlider extends PureComponent {
   }
 
   static propTypes = {
-    timelines: PropTypes.array.isRequired
+    timelines: PropTypes.array.isRequired,
+    categories: PropTypes.array.isRequired
   };
 
   onInit = () => {
@@ -38,45 +39,52 @@ class ArticleSlider extends PureComponent {
   };
 
   render() {
-    const { timelines } = this.props;
+    const { timelines, categories } = this.props;
     return (
       <div className="slate_gray">
-        <Slider
-          {...this.props}
-          autoplay
-          ref={slider => {
-            this.slider = slider;
-          }}
-          beforeChange={this.updateCurrentTimeline}
-          onInit={this.onInit}
-          swipe={false}
-          infinite
-          fade
-        >
-          {timelines.map((data, index) => {
-            return <SlideContainer key={index} currentTimeline={this.state.currentTimeline} timeline={data} />;
-          })}
-        </Slider>
-        <div className="container">
+        <div className="container" style={{ paddingBottom: 20 }}>
+          <div className="row header_news_panel">
+            <Slider
+              arrows={false}
+              dots={false}
+              {...this.props}
+              autoplay
+              ref={slider => {
+                this.slider = slider;
+              }}
+              beforeChange={this.updateCurrentTimeline}
+              onInit={this.onInit}
+              swipe={false}
+              infinite
+              fade
+            >
+              {timelines.map((data, index) => {
+                return (
+                  <SlideContainer
+                    categories={categories}
+                    key={index}
+                    currentTimeline={this.state.currentTimeline}
+                    timeline={data}
+                  />
+                );
+              })}
+            </Slider>
+          </div>
           <div className="breaking-ribbon breaking-ribbon--full-width">
             <div className="breaking-ribbon__description">
               {timelines[this.state.currentTimeline].description}
             </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="outer">
-            {timelines.map((data, index) => {
-              return (
-                <ActiveSlideDot
-                  key={index}
-                  onClick={() => this.onClickDot(index)}
-                  isActive={index === this.state.currentTimeline}
-                  name={data.name}
-                />
-              );
-            })}
-          </div>
+          {timelines.map((data, index) => {
+            return (
+              <ActiveSlideDot
+                key={index}
+                onClick={() => this.onClickDot(index)}
+                isActive={index === this.state.currentTimeline}
+                name={data.name}
+              />
+            );
+          })}
         </div>
       </div>
     );

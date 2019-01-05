@@ -14,7 +14,9 @@ import React, { Component } from "react";
 class Home extends Component {
   static defaultProps = {};
 
-  static propTypes = {};
+  static propTypes = {
+    categories: PropTypes.array.isRequired
+  };
 
   componentWillUnmount() {
     this.props.resetPage();
@@ -23,7 +25,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Slider />
+        <Slider categories={this.props.categories} />
         <Link href={`/category?categoryId=latest`} as={`/category/latest`}>
           <a href={"javascript:0"} style={{ cursor: "pointer" }}>
             <Title title="Latest News" />

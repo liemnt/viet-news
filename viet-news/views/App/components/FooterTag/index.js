@@ -12,7 +12,7 @@ class FooterTag extends PureComponent {
   render() {
     const { id, name } = this.props.tag;
     return (
-      <Link href={`/tag?tagId=${id}`} as={`tag/${id}`}>
+      <Link href={`/tag?tagId=${id}`} as={`/tag/${id}`}>
         <a href="javascript:0" title="">
           {name}
         </a>
