@@ -393,7 +393,8 @@ html .ma {
 
 .wrap-logo {
   display: block;
-  padding-top: 18px;
+  padding: 10px 0;
+  /*padding-top: 18px;*/
   color: white;
   font-weight: bold;
   font-size: 2em;

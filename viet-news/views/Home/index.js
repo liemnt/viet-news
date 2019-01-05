@@ -25,7 +25,7 @@ class Home extends Component {
       <div>
         <Slider />
         <Link href={`/category?categoryId=latest`} as={`/category/latest`}>
-          <a href={'javascript:0'} style={{ cursor: "pointer" }}>
+          <a href={"javascript:0"} style={{ cursor: "pointer" }}>
             <Title title="Latest News" />
           </a>
         </Link>

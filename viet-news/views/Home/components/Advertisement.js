@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { timelines } from "../reducer/timeline.selector";
 
 class Advertisement extends PureComponent {
   static defaultProps = {};
@@ -7,35 +9,36 @@ class Advertisement extends PureComponent {
   static propTypes = {};
 
   render() {
+    const { timelines } = this.props;
+
     return (
       <section className="wrap wrap_dark">
         <div className="container full-bradius block__sensation">
           <div className="block__sensation__info">
             <div className="block__sensation__hash">
-              <a href="#">#sensation</a> <a href="#">#news</a>{" "}
-              <a href="#">#nicstyle</a>
+              {timelines.map(timeline => {
+                return <a href="javascript:0">{timeline.get("name")}</a>;
+              })}
             </div>
             <div className="block__sensation__title">
-              <h2 className="block__sensation__title_all">
-                New template version
-              </h2>
+              <h2 className="block__sensation__title_all">DÒNG SỰ KIỆN</h2>
               <div className="block__sensation__title_descr">
-                NicStyle bootstrap theme improved and developed
+                Tính năng mới sắp xếp các tin tức theo dòng sự kiện
               </div>
             </div>
-            <div className="block__sensation__description">
-              <a
-                className="show-info-button bg-1"
-                href="http://exsythemes.com/"
-                target="_blank"
-              >
-                All that you can write on our website, it will be described
-                here, but in short.
-              </a>
-            </div>
-            <div className="block__sensation__figure">
-              <img src="http://placehold.it/400x280" alt="" />
-            </div>
+            {/*<div className="block__sensation__description">*/}
+            {/*<a*/}
+            {/*className="show-info-button bg-1"*/}
+            {/*href="http://exsythemes.com/"*/}
+            {/*target="_blank"*/}
+            {/*>*/}
+            {/*All that you can write on our website, it will be described*/}
+            {/*here, but in short.*/}
+            {/*</a>*/}
+            {/*</div>*/}
+            {/*<div className="block__sensation__figure">*/}
+            {/*<img src="http://placehold.it/400x280" alt="" />*/}
+            {/*</div>*/}
           </div>
           <div className="full-bradiusalls">
             <span className="bradius2" />
@@ -55,4 +58,8 @@ class Advertisement extends PureComponent {
   }
 }
 
-export default Advertisement;
+const mapStateToProps = state => ({
+  timelines: timelines(state)
+});
+
+export default connect(mapStateToProps)(Advertisement);
