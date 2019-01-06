@@ -1,4 +1,4 @@
-var HOST = 'http://localhost:5006';
+var HOST = 'http://news-system.me';
 var EXTENDED_PATH = '/api/v1';
 var DOMAIN = '//a.com';
 
