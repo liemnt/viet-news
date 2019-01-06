@@ -27,11 +27,11 @@ class RightSideBar extends PureComponent {
       currentArticle
     } = this.props;
     return (
-      <Affix>
+      <Affix viewportOffsetTop={51} offsetTop={60}>
         <div
+          id="style-8"
           ref={r => (this.right = r)}
           style={{ overflowY: "scroll" }}
-          id="style-8"
           className="col-sm-4 col-md-3 right_sidebar hidden-xs hidden-sm"
         >
           <div className="news-tabs">

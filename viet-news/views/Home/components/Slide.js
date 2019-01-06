@@ -36,7 +36,7 @@ class Slide extends React.Component {
     return sortArticles.slice(0, 4).map(item => {
       const { thumbnail, id, title, backstory, slug, category_id } = item;
       return (
-        <Link href={`/news?slug=${slug}`} as={`/news/${slug}`}>
+        <Link key={id} href={`/news?slug=${slug}`} as={`/news/${slug}`}>
           <Tab.Pane style={{ cursor: "pointer" }} eventKey={id}>
             <div className="thumbnail thumbnail-169">
               <img
@@ -49,7 +49,7 @@ class Slide extends React.Component {
               <p className="tab-pane__category yel_line">
                 <Category categoryId={category_id} categories={categories} />
               </p>
-              <a className="tab-pane__title">{title}</a>
+              <span className="tab-pane__title">{title}</span>
               <p className="tab-pane__text">{backstory}</p>
             </div>
           </Tab.Pane>
@@ -66,14 +66,14 @@ class Slide extends React.Component {
     return sortArticles.slice(0, 4).map(item => {
       const { id, title, published_at } = item;
       return (
-        <NavItem eventKey={id}>
-          <a href="javascript:0">
+        <NavItem key={id} eventKey={id}>
+          <div>
             <span className="time">
               <i className="icon-clock-1" />
               <TimeAgo date={published_at} />
             </span>
             {title}
-          </a>
+          </div>
         </NavItem>
       );
     });
@@ -82,6 +82,7 @@ class Slide extends React.Component {
   render() {
     return (
       <Tab.Container
+        id={this.props.articles[0].id}
         onSelect={key => {
           this.setState({
             activeKey: key
@@ -94,7 +95,7 @@ class Slide extends React.Component {
             {this.renderTabPane()}
           </Tab.Content>
           <div className="col-sm-4 news-tabs">
-            <p className="news-tabs__title h2">Latest news</p>
+            <p className="news-tabs__title h2">Tin mới</p>
             <Nav
               className="news-tabs__nav nav nav-tabs shadow_text"
               role="tablist"

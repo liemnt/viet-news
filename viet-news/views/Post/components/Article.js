@@ -18,11 +18,7 @@ class Article extends PureComponent {
     return (
       <Link scroll={false} href={`/news?slug=${slug}`} as={`/news/${slug}`}>
         <li
-          // onClick={() => {
-          //   document.body.scrollTop = 0; // For Safari
-          //   document.documentElement.scrollTop = 0;
-          // }}
-          role="presentation"
+          style={{ width: "100%" }}
           className={classNames({ active: isActive })}
         >
           <a href="javascript:0">

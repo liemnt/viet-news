@@ -17,7 +17,11 @@ class Advertisement extends PureComponent {
           <div className="block__sensation__info">
             <div className="block__sensation__hash">
               {timelines.map(timeline => {
-                return <a href="javascript:0">{timeline.get("name")}</a>;
+                return (
+                  <a key={timeline.get("id")} href="javascript:0">
+                    {timeline.get("name")}
+                  </a>
+                );
               })}
             </div>
             <div className="block__sensation__title">
