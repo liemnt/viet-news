@@ -80,6 +80,7 @@ export default class MyDocument extends Document {
           <meta content="telephone=no" name="format-detection" />
           <link rel="shortcut icon" type="image/png" href="../static/img/favicon.png" />
           <meta property="og:type" content="website" />
+          <meta name="google-site-verification" content="VjRUaxklVnV7gi97DWcXN98xQ-NeupjyjF090lOPKsk" />
         </Head>
         <body>
           <Main />
