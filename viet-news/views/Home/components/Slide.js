@@ -4,6 +4,7 @@ import Category from "../../App/components/Category";
 import { Tab, Nav, NavItem } from "react-bootstrap";
 import TimeAgo from "../../App/components/TimeAgo";
 import Link from "next/link";
+import _ from "lodash";
 
 import PropTypes from "prop-types";
 
@@ -24,7 +25,7 @@ class Slide extends React.Component {
 
   componentDidMount() {
     this.setState({
-      activeKey: this.props.articles[0].id
+      activeKey: _.get(this.props.articles, "0.id")
     });
   }
 
@@ -82,7 +83,7 @@ class Slide extends React.Component {
   render() {
     return (
       <Tab.Container
-        id={this.props.articles[0].id}
+        id={_.get(this.props.articles, "0.id")}
         onSelect={key => {
           this.setState({
             activeKey: key

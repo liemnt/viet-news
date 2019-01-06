@@ -49,6 +49,7 @@ class ArticleSlider extends PureComponent {
               dots={false}
               {...this.props}
               autoplay
+              autoplaySpeed={10000}
               ref={slider => {
                 this.slider = slider;
               }}
