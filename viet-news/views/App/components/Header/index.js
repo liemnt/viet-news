@@ -4,6 +4,7 @@ import SearchButton from "../../containers/Header/SearchButton";
 import SearchInput from "../../containers/Header/SearchInput";
 import PropTypes from "prop-types";
 import Link from "next/link";
+import { Affix } from "react-overlays";
 import _ from "lodash";
 import classNames from "classnames";
 class Header extends PureComponent {
@@ -99,49 +100,37 @@ class Header extends PureComponent {
             <span />
           </a>
         </div>
-        <div className="header_down-wr">
-          <div className="header_down">
-            <div className="wrapper clearfix bigmegamenu">
-              <nav
-                className={classNames("wsmenu", "slideLeft", "clearfix", {
-                  menuopen: isOpen,
-                  menuclose: !isOpen
-                })}
-              >
-                <ul className="mobile-sub wsmenu-list">
-                  <li className="visible-sm visible-xs">
-                    <form className="navbar-form mob_search" role="search">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Search"
-                        />
-                      </div>
-                      <button type="submit" className="btn btn-search">
-                        <i className="icon-search" />
-                      </button>
-                    </form>
-                  </li>
-                  {filteredCategories.map(data => {
-                    return (
-                      <HeaderItem
-                        key={data.id}
-                        isActive={
-                          _.get(category, "id") === data.id ||
-                          _.get(article, "category_id") === data.id
-                        }
-                        data={data}
-                      />
-                    );
+        <Affix viewportOffsetTop={0} offsetTop={60} >
+          <div style={{ width: "100%" }} className="header_down-wr">
+            <div className="header_down">
+              <div className="wrapper clearfix bigmegamenu">
+                <nav
+                  className={classNames("wsmenu", "slideLeft", "clearfix", {
+                    menuopen: isOpen,
+                    menuclose: !isOpen
                   })}
-                  {/*<SearchButton />*/}
-                </ul>
-              </nav>
+                >
+                  <ul className="mobile-sub wsmenu-list">
+                    {filteredCategories.map(data => {
+                      return (
+                        <HeaderItem
+                          key={data.id}
+                          isActive={
+                            _.get(category, "id") === data.id ||
+                            _.get(article, "category_id") === data.id
+                          }
+                          data={data}
+                        />
+                      );
+                    })}
+                    {/*<SearchButton />*/}
+                  </ul>
+                </nav>
+              </div>
+              {/*<SearchInput />*/}
             </div>
-            {/*<SearchInput />*/}
           </div>
-        </div>
+        </Affix>
       </header>
     );
   }
