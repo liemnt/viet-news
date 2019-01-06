@@ -1,9 +1,11 @@
 import Head from "next/head";
 import TimelinePage from "../views/Timeline";
 import PropTypes from "prop-types";
+import { withRouter } from "next-router";
 
 import React, { PureComponent } from "react";
 import { getTimelineById } from "../services/api/timeline";
+import { DOMAIN } from "../config";
 
 class Timeline extends PureComponent {
   static defaultProps = {};
@@ -15,13 +17,16 @@ class Timeline extends PureComponent {
 
   render() {
     // console.log("test timeline", this.props.timeline);
-    const { categories, timeline } = this.props;
+    const { categories, timeline, router } = this.props;
     const { name, description } = this.props.timeline;
     return (
       <div>
         <Head>
           <title>{name}</title>
           <meta name="description" content={description || name} />
+          <meta property="og:url" content={`${DOMAIN}/${router.asPath}`} />
+          <meta property="og:title" content={name} />
+          <meta property="og:description" content={description || name} />
         </Head>
         <TimelinePage categories={categories} timeline={timeline} />
       </div>
@@ -42,4 +47,4 @@ Timeline.getInitialProps = async function(context) {
   };
 };
 
-export default Timeline;
+export default withRouter(Timeline);

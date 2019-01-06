@@ -18,7 +18,6 @@ class LoadMoreContainer extends PureComponent {
   };
   render() {
     const { page, numPerPage, total } = this.props;
-    console.log("test page", page, numPerPage, total);
     if ((page - 1) * numPerPage <= total) {
       return <LoadMore onClick={this.loadArticles} className="wrap-gray" />;
     }

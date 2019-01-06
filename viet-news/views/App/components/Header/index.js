@@ -135,11 +135,11 @@ class Header extends PureComponent {
                       />
                     );
                   })}
-                  <SearchButton />
+                  {/*<SearchButton />*/}
                 </ul>
               </nav>
             </div>
-            <SearchInput />
+            {/*<SearchInput />*/}
           </div>
         </div>
       </header>

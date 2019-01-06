@@ -64,6 +64,7 @@ export default class MyDocument extends Document {
             id="skins"
           />
           <link rel="stylesheet" href="../static/css/animate.css" />
+          <link rel="stylesheet" href="../static/css/nprogress.css" />
           {/*<link rel="stylesheet" href="../static/css/antd.css" />*/}
           {/*<link rel="stylesheet" href="../static/css/slick-theme.css" />*/}
           <link
@@ -72,6 +73,13 @@ export default class MyDocument extends Document {
             type="text/css"
             id="skins"
           />
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="HandheldFriendly" content="true" />
+          <meta content="telephone=no" name="format-detection" />
+
+          <meta property="og:type" content="website" />
         </Head>
         <body>
           <Main />

@@ -63,7 +63,10 @@ class Post extends PureComponent {
               />
               <div className="headline clearfix">
                 <div className="headline__data">
-                  <Link href={`/category/${category_id}`}>
+                  <Link
+                    href={`/category?categoryId=${category_id}`}
+                    as={`/category/${category_id}`}
+                  >
                     <a
                       href="javascript:0"
                       className="headline__category headline__category_orange"
@@ -84,7 +87,7 @@ class Post extends PureComponent {
                   <ul className="share__list">
                     <div
                       className="fb-share-button"
-                        data-href={"http://a.com/" + this.state.path}
+                      data-href={"http://a.com/" + this.state.path}
                       data-layout="button_count"
                       data-size="small"
                       data-mobile-iframe="true"

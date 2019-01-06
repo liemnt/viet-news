@@ -8,10 +8,19 @@ import FooterLine from "../views/App/components/Footer/FooterLine";
 import Footer from "../views/App/components/Footer/Footer";
 import Index from "../views/App/components/GoTop";
 
+import NProgress from "nprogress";
+import Router from "next/router";
+
 import createStore from "../store";
 import { getAllCategories } from "../services/api/category";
 import { getLatestTag } from "../services/api/tag";
 import { getLatestArticles } from "../services/api/article";
+
+Router.events.on("routeChangeStart", url => {
+  NProgress.start();
+});
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

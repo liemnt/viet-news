@@ -13,7 +13,6 @@ class Footer extends PureComponent {
 
   render() {
     const { tags, articles } = this.props;
-    console.log("test ar", articles);
     return (
       <footer className="footer slate_gray">
         <div className="container">
