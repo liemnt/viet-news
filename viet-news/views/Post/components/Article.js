@@ -14,19 +14,29 @@ class Article extends PureComponent {
 
   render() {
     const { isActive } = this.props;
-    const { title, published_at, slug } = this.props.article;
+    const { title, published_at, slug, thumbnail } = this.props.article;
     return (
       <Link scroll={false} href={`/news?slug=${slug}`} as={`/news/${slug}`}>
         <li
           style={{ width: "100%" }}
           className={classNames({ active: isActive })}
         >
-          <a href="javascript:0">
-            <span className="time">
-              <i className="icon-clock-1" />
-              <TimeAgo date={published_at} />
-            </span>
-            {title}
+          <a style={{ display: "flex" }} href="javascript:0">
+            <div style={{ flexShrink: 0, paddingRight: 10, width: "30%" }}>
+              <div
+                style={{ marginBottom: 0 }}
+                className="thumbnail thumbnail-43"
+              >
+                <img src={thumbnail} alt="" />
+              </div>
+            </div>
+            <div>
+              <span className="time">
+                <i className="icon-clock-1" />
+                <TimeAgo date={published_at} />
+              </span>
+              {title}
+            </div>
           </a>
         </li>
       </Link>

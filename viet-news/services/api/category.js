@@ -1,5 +1,5 @@
 import fetch from "isomorphic-unfetch";
-import { BASE_URL } from "./const";
+import { BASE_URL } from "../../config";
 import { API_PATH } from "./path";
 
 export const getAllCategories = async () => {
