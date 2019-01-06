@@ -1128,7 +1128,7 @@ a:focus {
   }
 }
 
-//  991px END
+/*//  991px END*/
 @media only screen and (min-width: 781px) {
   .wsmenu-list li:hover > .wsmenu-submenu {
     display: block !important;
