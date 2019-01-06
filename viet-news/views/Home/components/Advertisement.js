@@ -25,9 +25,9 @@ class Advertisement extends PureComponent {
               })}
             </div>
             <div className="block__sensation__title">
-              <h2 className="block__sensation__title_all">DÒNG SỰ KIỆN</h2>
+              <h2 className="block__sensation__title_all">Tính năng mới: DÒNG SỰ KIỆN</h2>
               <div className="block__sensation__title_descr">
-                Tính năng mới sắp xếp các tin tức theo dòng sự kiện
+                Sắp xếp các tin tức theo các sự kiện cụ thể
               </div>
             </div>
             {/*<div className="block__sensation__description">*/}
