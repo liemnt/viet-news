@@ -10,7 +10,13 @@ class Index extends PureComponent {
   };
 
   render() {
-    return this.props.categories.find(c => c.id === this.props.categoryId).name;
+    const category = this.props.categories.find(
+      c => c.id === this.props.categoryId
+    );
+    if (!category) {
+      return null;
+    }
+    return category.name;
   }
 }
 

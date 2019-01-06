@@ -10,7 +10,10 @@ const NewsPage = ({ article, categories, tags, router }) => (
     <Head>
       <meta name="description" content={article.backstory} />
       <title>{article.title}</title>
-      <meta content={tags.map(item => item.name).join(" , ")} name="keywords" />
+      <meta
+        content={(tags || []).map(item => item.name).join(" , ")}
+        name="keywords"
+      />
 
       <meta property="og:url" content={`${DOMAIN}/${router.asPath}`} />
       <meta property="og:type" content="website" />
@@ -31,6 +34,11 @@ NewsPage.getInitialProps = async function(context) {
       return {
         article: res.data,
         tags: tags.data
+      };
+    } else {
+      return {
+        article: res.data,
+        tags: []
       };
     }
   }
