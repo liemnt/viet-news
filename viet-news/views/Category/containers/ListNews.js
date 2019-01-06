@@ -8,7 +8,6 @@ import _ from "lodash";
 import Title from "../../../views/App/components/Title";
 import { withRouter } from "next/router";
 import FlipMove from "react-flip-move";
-import { Spin } from "antd";
 import {
   isLoading,
   numPerPage,

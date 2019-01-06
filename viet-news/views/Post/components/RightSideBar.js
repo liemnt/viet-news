@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import { Anchor } from "antd";
 import { Affix } from "react-overlays";
 import Article from "./Article";
 import TitleRightBar from "../containers/TitleRightBar";

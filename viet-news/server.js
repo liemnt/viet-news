@@ -23,7 +23,6 @@ app
     );
 
     server.get("/news/:slug", (req, res) => {
-      console.log("test news 1");
       const actualPage = "/news";
       const queryParams = { slug: req.params.slug };
       app.render(req, res, actualPage, queryParams);
@@ -35,27 +34,9 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
-    server.get("/timeline/:timelineId", (req, res) => {
-      const actualPage = "/timeline";
-      const queryParams = { timelineId: req.params.timelineId };
-      app.render(req, res, actualPage, queryParams);
-    });
-
     server.get("/tag/:tagId", (req, res) => {
       const actualPage = "/tag";
       const queryParams = { tagId: req.params.tagId };
-      app.render(req, res, actualPage, queryParams);
-    });
-
-    server.get("/product/:id", (req, res) => {
-      const actualPage = "/product";
-      const queryParams = { id: req.params.id };
-      app.render(req, res, actualPage, queryParams);
-    });
-
-    server.get("/timeline/:timeline_id", (req, res) => {
-      const actualPage = "/list";
-      const queryParams = { timeline_id: req.params.timeline_id };
       app.render(req, res, actualPage, queryParams);
     });
 

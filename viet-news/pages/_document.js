@@ -78,7 +78,7 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="HandheldFriendly" content="true" />
           <meta content="telephone=no" name="format-detection" />
-
+          <link rel="shortcut icon" type="image/png" href="../static/img/favicon.png" />
           <meta property="og:type" content="website" />
         </Head>
         <body>

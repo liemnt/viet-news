@@ -7,6 +7,7 @@ import TagList from "../containers/TagList";
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "next/router";
+import {DOMAIN} from '../../../config'
 
 class Post extends PureComponent {
   static defaultProps = {};
@@ -50,6 +51,7 @@ class Post extends PureComponent {
       tags,
       timeline_id
     } = article;
+    const path = `${DOMAIN}/${this.state.path}`;
     return (
       <div className="wrapper">
         <article className="container articles">
@@ -87,14 +89,14 @@ class Post extends PureComponent {
                   <ul className="share__list">
                     <div
                       className="fb-share-button"
-                      data-href={"http://a.com/" + this.state.path}
+                      data-href={path}
                       data-layout="button_count"
                       data-size="small"
                       data-mobile-iframe="true"
                     >
                       <a
                         target="_blank"
-                        href={"http://a.com/" + this.state.path}
+                        href={path}
                         className="fb-xfbml-parse-ignore"
                       >
                         Chia sẻ

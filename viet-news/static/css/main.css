@@ -401,6 +401,11 @@ html .ma {
   cursor: pointer;
 }
 
+a.wrap-logo{
+  transition: 0.3s;
+  color: #f38844;
+}
+
 /* 2.1.Logo */
 
 .logo {
@@ -5355,7 +5360,8 @@ input.newsletter-input:-ms-input-placeholder {
   margin-bottom: 25px;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: none;
 }
 
