@@ -11,7 +11,7 @@ class FooterLine extends PureComponent {
       <div className="footer slate_gray copyrights">
         <div className="container">
           <div className="row">
-            <div className="col-sm-6">
+            <div className="col-sm-3">
               <p className="copyright">
                 © 2018 VietNews | Development by{" "}
                 <a href="http://exsythemes.com" target="_blank">

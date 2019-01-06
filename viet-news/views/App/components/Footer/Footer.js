@@ -52,7 +52,7 @@ class Footer extends PureComponent {
                 </li>
               </ul>
             </div>
-            <div className="col-md-6 footer-post">
+            <div className="col-md-3 footer-post">
               <span className="footer__category yellow-line">Latest News</span>
               <ul>
                 {articles.slice(0, 5).map(article => {
